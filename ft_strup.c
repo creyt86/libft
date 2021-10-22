@@ -1,26 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 16:51:20 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/22 16:52:17 by creyt            ###   ########.fr       */
+/*   Created: 2021/10/22 14:51:23 by creyt             #+#    #+#             */
+/*   Updated: 2021/10/22 16:35:41 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_strlen(const char	*str)
+char *ft_strdup(const char *s)
 {
+	char *s2;
 	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	int	len;
+	
+	len = 0;
+	while (s[len])
+		len++;
+	s2 = malloc(sizeof(s * i);
+	if (!s2)
+		return (0);
+	else
 	{
-		i++;
+		while (s[i])
+		{
+			s2[i] = s[i];
+			i++;
+		}
+	s2[i] = '\0';
+	return (s2);
 	}
-	return (i);
+}
+
+int	main()
+{
+	char *s1;
+	char *s2;
+
+	s1 = "Hello toi";
+	printf("%s\n", ft_strdup(s2));
 }

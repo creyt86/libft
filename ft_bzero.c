@@ -21,7 +21,7 @@ void	ft_bzero(void	*s, size_t n)
 	ft_memset (s, '\0', n);
 }
 
-int	main()
+/*int	main()
 {
 	char b[] = "Hello";
 	char d[] = "Bonjour tout le monde";
@@ -31,4 +31,4 @@ int	main()
 	ft_bzero(d, 4);
 	printf("%s\n", d);
 	return (0);
-}
+}*/

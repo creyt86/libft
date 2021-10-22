@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:21:02 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/19 18:02:28 by creyt            ###   ########.fr       */
+/*   Updated: 2021/10/22 16:49:11 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 
 int	ft_memcmp(void *dst, void *src, size_t n)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	d = (char *)dst;
-	s = (const char *)src;
-	i = 0;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	while (n--)
 	{
-		if (s[i] != d[i])
-			return (d[i] - s[i]);
-		i++;
+		if (*s != *d)
+			return (*d - *s);
+		s++;
+		d++;
 	}
 	return (0);
 }

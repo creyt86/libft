@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:46:42 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/18 14:12:11 by creyt            ###   ########.fr       */
+/*   Updated: 2021/10/22 16:51:04 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (0);
 }
 
@@ -32,7 +34,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	c;
    
-	c = 'w';
+	c = '\0';
 
 	printf("%s\n", ft_strchr("Hello world", c));
 
