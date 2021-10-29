@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:32:17 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/22 16:50:11 by creyt            ###   ########.fr       */
+/*   Updated: 2021/10/25 15:45:48 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,29 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const char	*s;
-	char	*d;
-	size_t	i;
+	int	i;
 
-	s = (const char *)src;
-	d = (char *)dst;
-	if (!dst && !src)
+	if (src == dst)
 		return (0);
-	if (d > s)
+	if (dst > src)
 	{
-		i = len - 1;
+		i = (int)len - 1;
 		while (i >= 0)
 		{
-			d[i] = s[i];
+			*(char *)(dst + i) = *(char *)(src + i);
 			i--;
 		}
 	}
 	else
 	{
 		i = 0;
-		while (i < len)
+		while (i < (int)len)
 		{
-			d[i] = s[i];
+			*(char *)(dst + i) = *(char *)(src + i);
 			i++;
 		}
 	}
-	return (d);
+	return (dst);
 }
 
 /*int	main(void)

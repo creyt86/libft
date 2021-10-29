@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:28:58 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/22 16:48:11 by creyt            ###   ########.fr       */
+/*   Updated: 2021/10/25 14:13:20 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = (unsigned char *)s;
 	while (n--)
 	{
-		if (*str == (unsigned)c)
+		if (*str == (unsigned char)c)
 			return (str);
 		str++;
 	}

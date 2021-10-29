@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 10:06:03 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/25 09:45:09 by creyt            ###   ########.fr       */
+/*   Created: 2021/10/26 14:48:23 by creyt             #+#    #+#             */
+/*   Updated: 2021/10/28 11:19:56 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
-//#include <stdio.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*mdgm;
+	char	*s3;
+	size_t	i;
+	size_t	j;
 
-	mdgm = malloc (size * count);
-	if (!mdgm)
+	if (!s1 || !s2)
 		return (0);
-	ft_bzero(mdgm, count * size);
-	return (mdgm);
+	i = 0;
+	j = 0;
+	s3 = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s3)
+		return (0);
+	while (s1[i])
+	{
+		s3[j++] = s1[i++];
+	}
+	i = 0;
+	while (s2[i])
+	{
+		s3[j++] = s2[i++];
+	}
+	s3[j] = '\0';
+	return (s3);
 }
-
-/*int	main()
-{
-	char *s ;
-
-	s = ft_calloc(5, sizeof(char));
-	s = "hello";
-	printf("%s\n", s);
-}*/

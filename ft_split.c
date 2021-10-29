@@ -1,35 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 10:06:03 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/25 09:45:09 by creyt            ###   ########.fr       */
+/*   Created: 2021/10/29 11:07:59 by creyt             #+#    #+#             */
+/*   Updated: 2021/10/29 14:58:25 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
-//#include <stdio.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t count, size_t size)
+static int	ft_charisdeliminator(char c, char	*set)
 {
-	char	*mdgm;
+	size_t	i;
 
-	mdgm = malloc (size * count);
-	if (!mdgm)
-		return (0);
-	ft_bzero(mdgm, count * size);
-	return (mdgm);
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return(1);
+		i++;
+	}
+	if (c == '\0')
+		return (1);
+	return (0);
 }
-
-/*int	main()
+/*char **ft_split(char const *s, char c)
 {
-	char *s ;
+	char	**s2;
+	size_t	i;
 
-	s = ft_calloc(5, sizeof(char));
-	s = "hello";
-	printf("%s\n", s);
+	if (!s)
+		return (0);
+	while (s[i])
+	{
+		i++;
+	}
+
+	return (s2);
 }*/
+
+
+int	main()
+{
+	char	*s1 = "Bonjour les amis";
+	char	c = '\0';
+	printf("%d\n", ft_charisdeliminator(c, s1));
+}

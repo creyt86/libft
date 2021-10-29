@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 10:06:03 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/25 09:45:09 by creyt            ###   ########.fr       */
+/*   Created: 2021/10/22 14:51:23 by creyt             #+#    #+#             */
+/*   Updated: 2021/10/26 14:45:02 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
-//#include <stdio.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s)
 {
-	char	*mdgm;
+	char	*s2;
+	int		i;
+	int		len;
 
-	mdgm = malloc (size * count);
-	if (!mdgm)
+	len = 0;
+	i = 0;
+	while (s[len])
+		len++;
+	s2 = malloc(sizeof(char) * (len + 1));
+	if (!s2)
 		return (0);
-	ft_bzero(mdgm, count * size);
-	return (mdgm);
+	else
+	{
+		while (s[i])
+		{
+			s2[i] = s[i];
+			i++;
+		}
+		s2[i] = '\0';
+		return (s2);
+	}
 }
-
-/*int	main()
-{
-	char *s ;
-
-	s = ft_calloc(5, sizeof(char));
-	s = "hello";
-	printf("%s\n", s);
-}*/

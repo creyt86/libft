@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 13:43:21 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/22 14:45:23 by creyt            ###   ########.fr       */
+/*   Updated: 2021/10/25 15:35:25 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	s = (char *)src;
 	d = (char *)dst;
-	if (!dst || !src)
+	if (src == dst)
 		return (0);
 	while (n > i)
 	{
@@ -35,8 +35,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 /*int	main()
 {
-	char s1[] = "Hello";
-	char s2 [] = "Coucou";
+	char s1[] = " ";
+	char s2 [] = " ";
 	size_t n = 0;
 
 	
