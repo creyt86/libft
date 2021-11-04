@@ -1,52 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 11:07:59 by creyt             #+#    #+#             */
-/*   Updated: 2021/11/04 11:02:34 by creyt            ###   ########.fr       */
+/*   Created: 2021/11/01 15:43:28 by creyt             #+#    #+#             */
+/*   Updated: 2021/11/04 10:58:08 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	ft_charisdeliminator(char c, char	*set)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return(1);
-		i++;
-	}
-	if (c == '\0')
-		return (1);
-	return (0);
-}
-/*char **ft_split(char const *s, char c)
-{
-	char	**s2;
-	size_t	i;
+	char			*str;
+	unsigned int	i;
+	size_t			len;
 
 	if (!s)
 		return (0);
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (0);
+	i = 0;
 	while (s[i])
 	{
+		str[i] = f(i, s[i]);
 		i++;
 	}
-
-	return (s2);
-}*/
-
-
-int	main()
-{
-	char	*s1 = "Bonjour les amis";
-	char	c = '\0';
-	printf("%d\n", ft_charisdeliminator(c, s1));
-}
+	str[i] = '\0';
+	return (str);
+}	

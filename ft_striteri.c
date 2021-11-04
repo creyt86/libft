@@ -1,52 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 11:07:59 by creyt             #+#    #+#             */
-/*   Updated: 2021/11/04 11:02:34 by creyt            ###   ########.fr       */
+/*   Created: 2021/11/04 10:50:08 by creyt             #+#    #+#             */
+/*   Updated: 2021/11/04 10:59:26 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	ft_charisdeliminator(char c, char	*set)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return(1);
-		i++;
-	}
-	if (c == '\0')
-		return (1);
-	return (0);
-}
-/*char **ft_split(char const *s, char c)
-{
-	char	**s2;
-	size_t	i;
+	unsigned int	i;
 
 	if (!s)
-		return (0);
+		return;
+	i = 0;
 	while (s[i])
 	{
+		f(i, &s[i]);
 		i++;
 	}
-
-	return (s2);
-}*/
-
-
-int	main()
-{
-	char	*s1 = "Bonjour les amis";
-	char	c = '\0';
-	printf("%d\n", ft_charisdeliminator(c, s1));
 }
