@@ -6,7 +6,7 @@
 #    By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/21 13:25:05 by creyt             #+#    #+#              #
-#    Updated: 2021/11/04 10:58:27 by creyt            ###   ########.fr        #
+#    Updated: 2021/11/04 15:09:03 by creyt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ SRC = ft_atoi.c \
 	  ft_memcpy.c \
 	  ft_memmove.c \
 	  ft_memset.c \
+	  ft_putchar_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putstr_fd.c \
 	  ft_strchr.c \
 	  ft_strdup.c \
 	  ft_striteri.c \
