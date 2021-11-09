@@ -6,18 +6,18 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:41:46 by creyt             #+#    #+#             */
-/*   Updated: 2021/11/04 15:28:27 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 12:44:08 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	if (!s)
-		return;
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

@@ -6,7 +6,7 @@
 #    By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/21 13:25:05 by creyt             #+#    #+#              #
-#    Updated: 2021/11/04 15:09:03 by creyt            ###   ########.fr        #
+#    Updated: 2021/11/09 10:31:21 by creyt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRC = ft_atoi.c \
 	  ft_putchar_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putstr_fd.c \
+	  ft_putnbr_fd.c \
+	  ft_split.c \
 	  ft_strchr.c \
 	  ft_strdup.c \
 	  ft_striteri.c \
@@ -49,10 +51,8 @@ SRC = ft_atoi.c \
 
 OBJ = $(SRC:%.c=%.o)
 
-OPTION = -c
-
-$(NAME):
-		@gcc $(FLAGS) $(OPTION) $(SRC)
+$(NAME): $(OBJ)
+		#@gcc $(FLAGS) $(OPTION) $(SRC)
 		@ar -rc  $(NAME) $(OBJ)
 
 all: $(NAME)
@@ -64,3 +64,5 @@ fclean : clean
 		@rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY : bonus all clean fclean re

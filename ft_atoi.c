@@ -6,14 +6,11 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:36:04 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/26 08:59:53 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 10:30:11 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>*/
 
 int	ft_atoi(const char *str)
 {
@@ -42,9 +39,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * neg);
 }
-
-/*int	main(int argc, char **argv)
-{
-	(void)argc;
-	printf("%d\n", ft_atoi(argv[1]));
-}*/

@@ -6,30 +6,19 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 10:06:03 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/25 09:45:09 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 10:35:03 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
-//#include <stdio.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*mdgm;
+	char	*c;
 
-	mdgm = malloc (size * count);
-	if (!mdgm)
+	c = malloc (size * count);
+	if (!c)
 		return (0);
-	ft_bzero(mdgm, count * size);
-	return (mdgm);
+	ft_bzero(c, count * size);
+	return (c);
 }
-
-/*int	main()
-{
-	char *s ;
-
-	s = ft_calloc(5, sizeof(char));
-	s = "hello";
-	printf("%s\n", s);
-}*/

@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 09:46:16 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/29 15:20:54 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 11:30:16 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s2[i] = '\0';
 	return (s2);
 }
-
-/*int	main()
-{
-	char	*s1 = "  \t \t \n   \n\n\n\t";
-	char	*set = " \n\t";
-
-	printf("%s\n", ft_strtrim(s1, set));
-}*/

@@ -6,13 +6,11 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:05:06 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/29 15:02:02 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 11:29:55 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-//#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -27,12 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}	
 	return (0);
 }
-
-/*int	main()
-{
-	char c;
-
-	c = 'l';
-	printf("%s\n", ft_strrchr("Hello World", c));
-
-}*/

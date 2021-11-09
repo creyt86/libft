@@ -6,38 +6,21 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 11:07:59 by creyt             #+#    #+#             */
-/*   Updated: 2021/11/05 14:02:07 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 10:29:50 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-/*static int	ft_charisdeliminator(char c, char	*set)
+static int	count_words(const char *s, char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return(1);
-		i++;
-	}
-	if (c == '\0')
-		return (1);
-	return (0);
-}*/
-
-static int	count_words(char *s, char c)
-{
-	size_t	i;
+	int		i;
 	int		nbwords;
 
 	i = 0;
 	nbwords = 0;
-	while (s[i] == c)
-		i++;
+	if (s[i] == c || s[0] == '\0')
+		nbwords--;
 	while (s[i])
 	{
 		if (s[i] == c && c != s[i + 1] && s[i + 1] != '\0')
@@ -49,45 +32,53 @@ static int	count_words(char *s, char c)
 	return (nbwords);
 }
 
-static int	count_letters(char *s, char c)
+static int	count_letters(const char *s, char c)
 {
-	size_t	i;
-	int letters;
+	int	i;
 
 	i = 0;
-	letters = 0;
-	while (s[i])
+	while (s[i] && s[i] != c)
 	{
-		if (s[i] == c)
-			break ;
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
-char **ft_split(char const *s, char c)
+static void	*malloc_error(char **s, int j)
+{
+	while (j--)
+	{
+		free(s[j]);
+	}
+	free(s);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**s2;
-	size_t	i;
+	int		count;
+	int		letters;
+	int		j;
 
 	if (!s)
-		return (0);
-	s2 = malloc(sizeof(char *) * (count_words + 1));
+		return (NULL);
+	count = count_words(s, c);
+	s2 = malloc(sizeof(char *) * (count + 1));
 	if (!s2)
-		return (0);
-	while (s[i])
+		return (NULL);
+	j = 0;
+	while (count > j)
 	{
-		if (s[i] == c
-		i++;
+		while (*s == c && *s)
+			s++;
+		letters = count_letters (s, c);
+		s2[j] = ft_substr(s, 0, letters);
+		if (s2[j] == NULL)
+			return (malloc_error(s2, j));
+		s = s + letters;
+		j++;
 	}
-	ft_substr(s, count_words, count_letters);
+	s2[j] = NULL;
 	return (s2);
-}
-
-int	main()
-{
-	char	*s1 = "  Bonjour   les amis ";
-//	char	*s1 = "Bonjour";
-	char	c = ' '; 
-	printf("%s\n", ft_split(s1, c));
 }

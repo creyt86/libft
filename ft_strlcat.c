@@ -6,13 +6,11 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:29:09 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/19 11:25:31 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 11:27:31 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <string.h>
-#include <stdio.h>*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -41,20 +39,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dstlen + srclen);
 	return (dstsize + srclen);
 }
-
-/*int	main ()
-{
-	char	*s;
-	char	*d;
-	size_t dsize;
-
-	char	s1[] = "Salut";
-	char	d1[] = "Hello";
-
-	s = "Salut";
-	d = "Hello";
-	dsize = 4;
-
-	//printf("%lu\n", strlcat(s, d, dsize));
-	printf("%lu\n", ft_strlcat(s1, d1, dsize));
-}*/

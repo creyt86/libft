@@ -6,7 +6,7 @@
 /*   By: creyt <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 10:31:36 by creyt             #+#    #+#             */
-/*   Updated: 2021/10/22 17:43:56 by creyt            ###   ########.fr       */
+/*   Updated: 2021/11/09 11:29:27 by creyt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-/*int	main()
-{
-	char *h = "Bonjour tout le monde";
-	char *n = "tout";
-	size_t len = 20;
-
-	printf("%s\n", ft_strnstr(h, n, len));
-}*/
